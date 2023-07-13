@@ -21,9 +21,7 @@ function mainPrompt(){
             case 'View all roles':
                 viewAllRoles()
                 break;
-             case 'View all roles':
-                viewAllRoles()
-                break;   
+           
             case 'Add an employee':
                  addEmployee()
                     break;
@@ -51,8 +49,37 @@ function viewAllEmployee(){
     })
 
 }
+function viewDepartments(){
+db.query(`SELECT * FROM department`,(err,res)=>{
+        if (err) throw err
+        console.log(res)
+        mainPrompt()
+    })
 
+}
 
-
+function viewAllRoles(){
+    db.query(`SELECT * FROM role LEFT JOIN department ON role.department_id= department.id `,(err,res)=>{
+            if (err) throw err
+            console.log(res)
+            mainPrompt()
+        })
+    
+    }
+    function addDepartment() {
+        inquirer
+            .prompt({
+              type: "input",
+              name: "deptName",
+              message: "Enter the name of new department:",
+            })
+            .then((answer) => { 
+                db.query(`INSERT INTO department SET?` ,{name:answer.deptName},(err,res)=>{
+                    if (err) throw err
+                    console.log("department added")
+                    mainPrompt
+                })
+                });
+    }
 
 mainPrompt()
