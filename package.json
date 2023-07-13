@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/michellesambuu/employee-tracker-12#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.5.1"
   }
 }
