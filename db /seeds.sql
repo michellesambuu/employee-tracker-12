@@ -8,10 +8,10 @@ VALUES(1,'Finance'),
 
 
 INSERT INTO role (id, title, salary, department_id)
-VALUES (1,'Financial analyst', 63.000, 1),
-      (2, 'Accountant',45.000, 2),
-      (3, 'Marketing analyst', 50.000, 3),
-      (4,'Software Engineer', 80.000, 4);
+VALUES (1,'Financial analyst', 63000, 1),
+      (2, 'Accountant',45000, 2),
+      (3, 'Marketing analyst', 50000, 3),
+      (4,'Software Engineer', 80000, 4);
 
      
 INSERT INTO employee
